@@ -18,10 +18,12 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         layout()
-        view.backgroundColor = .brown
+        hideKeyboardWhenTappedAround()
+        view.backgroundColor = .white
     }
     
     private func layout() {
+        navigationItem.title = "Детальный просмотр ключа"
         view.addSubview(detailView)
         let constraint: CGFloat = 10
         
@@ -35,4 +37,20 @@ class DetailViewController: UIViewController {
     
 }
 
-
+// MARK: - UITextFieldDelegate
+extension DetailViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return true
+    }
+    
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+}

@@ -1,5 +1,5 @@
 //
-//  DetailView.swift
+//  AddNewKeyView.swift
 //  keyKeeper
 //
 //  Created by Данил Менделев on 30.05.2022.
@@ -7,13 +7,9 @@
 
 import UIKit
 
-class DetailView: UIView {
-
-    private lazy var itemDetailView: UIView = {
-        let contentView = UIView()
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        return contentView
-    }()
+class AddNewKeyView: UIView {
+    
+    weak var delegate: AddNewKeyProtocolDelegate?
     
     private lazy var itemNameImage: UIImageView = {
         let image = UIImageView(image: UIImage(systemName: "person.text.rectangle.fill"))
@@ -36,7 +32,7 @@ class DetailView: UIView {
         textField.font = UIFont.systemFont(ofSize: 20)
         textField.placeholder = "Введите имя места откуда логин/пароль"
         textField.textColor = .black
-//        textField.delegate = DetailViewController()
+//        textField.delegate = AddNewKeyViewController()
         return textField
     }()
     
@@ -61,7 +57,7 @@ class DetailView: UIView {
         textField.font = UIFont.systemFont(ofSize: 20)
         textField.placeholder = "Введите логин учетной записи"
         textField.textColor = .black
-//        textField.delegate = DetailViewController()
+//        textField.delegate = AddNewKeyViewController()
         return textField
     }()
     
@@ -86,19 +82,23 @@ class DetailView: UIView {
         textField.font = UIFont.systemFont(ofSize: 20)
         textField.placeholder = "Введите пароль учетной записи"
         textField.textColor = .black
-//        textField.delegate = DetailViewController()
+//        textField.delegate = AddNewKeyViewController()
         return textField
     }()
     
-    private lazy var saveButton: UIButton = {
+    private lazy var createButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 20
-        button.setTitle("Сохранить", for: .normal)
+        button.setTitle("Создать", for: .normal)
         button.layer.backgroundColor = UIColor.blue.cgColor
+        button.addTarget(self, action: #selector(closeAddNewKey), for: .touchUpInside)
         return button
     }()
     
+    @objc private func closeAddNewKey() {
+        delegate?.closeAddNewKeyViewController()
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -112,18 +112,16 @@ class DetailView: UIView {
     
     
     private func layout(){
-        addSubview(itemDetailView)
-        [itemNameImage, itemNameLabel, itemNameTextField, itemLoginImage, itemLoginLabel, itemLoginTextField, itemPasswordImage, itemPasswordLabel, itemPasswordTextField, saveButton].forEach{itemDetailView.addSubview($0)}
+        [itemNameImage, itemNameLabel, itemNameTextField, itemLoginImage, itemLoginLabel, itemLoginTextField, itemPasswordImage, itemPasswordLabel, itemPasswordTextField, createButton].forEach{addSubview($0)}
         let inset: CGFloat = 10
         
         NSLayoutConstraint.activate([
-            
-            itemNameImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+            itemNameImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: inset),
             itemNameImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: inset),
             itemNameImage.widthAnchor.constraint(equalToConstant: 50),
             itemNameImage.heightAnchor.constraint(equalToConstant: 50),
             
-            itemNameLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+            itemNameLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: inset),
             itemNameLabel.leadingAnchor.constraint(equalTo: itemNameImage.trailingAnchor, constant: inset),
             itemNameLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -inset),
             itemNameLabel.heightAnchor.constraint(equalToConstant: 20),
@@ -166,14 +164,12 @@ class DetailView: UIView {
             itemPasswordTextField.heightAnchor.constraint(equalToConstant: 20),
             
             
-            saveButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -inset),
-            saveButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -inset),
-            saveButton.heightAnchor.constraint(equalToConstant: 50),
-            saveButton.widthAnchor.constraint(equalToConstant: 130)
+            createButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -inset),
+            createButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -inset),
+            createButton.heightAnchor.constraint(equalToConstant: 50),
+            createButton.widthAnchor.constraint(equalToConstant: 130)
         ])
     }
     
+
 }
-
-
-

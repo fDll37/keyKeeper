@@ -18,12 +18,13 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
+        view.backgroundColor = .gray
         self.mainView.delegate = self
         layout()
     }
     
     private func layout() {
+        navigationItem.title = "Ключница"
         view.addSubview(mainView)
         let constraint: CGFloat = 10
         
@@ -46,7 +47,12 @@ extension UIView {
 
 
 // MARK: - Delegate
-extension MainViewController: MainViewProtocol {
+extension MainViewController: MainViewProtocolDelegate {
+    func openAddNewKeyViewController() {
+        let addNewKeyVC = AddNewKeyViewController()
+        present(addNewKeyVC, animated: true)
+    }
+    
     func openDetailItemViewController(id: Int) {
         let detailVC = DetailViewController()
         navigationController?.pushViewController(detailVC, animated: true)

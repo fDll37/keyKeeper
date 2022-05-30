@@ -18,7 +18,10 @@
 		0EA08E3B2844B88900723CA5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA08E3A2844B88900723CA5 /* MainView.swift */; };
 		0EA08E3D2844B89400723CA5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA08E3C2844B89400723CA5 /* MainViewController.swift */; };
 		0EA08E3F2844BF7000723CA5 /* MainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA08E3E2844BF7000723CA5 /* MainViewCell.swift */; };
-		0EA08E4128451E0800723CA5 /* MainViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA08E4028451E0800723CA5 /* MainViewProtocol.swift */; };
+		0EA08E4128451E0800723CA5 /* MainViewProtocolDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA08E4028451E0800723CA5 /* MainViewProtocolDelegate.swift */; };
+		0EA08E462845391600723CA5 /* AddNewKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA08E452845391600723CA5 /* AddNewKeyViewController.swift */; };
+		0EA08E482845392D00723CA5 /* AddNewKeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA08E472845392D00723CA5 /* AddNewKeyView.swift */; };
+		0EA08E4C28453EE600723CA5 /* AddNewKeyProtocolDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA08E4B28453EE600723CA5 /* AddNewKeyProtocolDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +38,10 @@
 		0EA08E3A2844B88900723CA5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0EA08E3C2844B89400723CA5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0EA08E3E2844BF7000723CA5 /* MainViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewCell.swift; sourceTree = "<group>"; };
-		0EA08E4028451E0800723CA5 /* MainViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewProtocol.swift; sourceTree = "<group>"; };
+		0EA08E4028451E0800723CA5 /* MainViewProtocolDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewProtocolDelegate.swift; sourceTree = "<group>"; };
+		0EA08E452845391600723CA5 /* AddNewKeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewKeyViewController.swift; sourceTree = "<group>"; };
+		0EA08E472845392D00723CA5 /* AddNewKeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewKeyView.swift; sourceTree = "<group>"; };
+		0EA08E4B28453EE600723CA5 /* AddNewKeyProtocolDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewKeyProtocolDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,7 @@
 		0EA08E1C2844B7A500723CA5 /* keyKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				0EA08E44284538E800723CA5 /* AddNewKey */,
 				0EA08E392844B87900723CA5 /* Main */,
 				0EA08E342844B81F00723CA5 /* Detail */,
 				0EA08E1D2844B7A500723CA5 /* AppDelegate.swift */,
@@ -96,9 +103,19 @@
 				0EA08E3A2844B88900723CA5 /* MainView.swift */,
 				0EA08E3E2844BF7000723CA5 /* MainViewCell.swift */,
 				0EA08E3C2844B89400723CA5 /* MainViewController.swift */,
-				0EA08E4028451E0800723CA5 /* MainViewProtocol.swift */,
+				0EA08E4028451E0800723CA5 /* MainViewProtocolDelegate.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		0EA08E44284538E800723CA5 /* AddNewKey */ = {
+			isa = PBXGroup;
+			children = (
+				0EA08E452845391600723CA5 /* AddNewKeyViewController.swift */,
+				0EA08E472845392D00723CA5 /* AddNewKeyView.swift */,
+				0EA08E4B28453EE600723CA5 /* AddNewKeyProtocolDelegate.swift */,
+			);
+			path = AddNewKey;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,15 +189,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EA08E482845392D00723CA5 /* AddNewKeyView.swift in Sources */,
 				0EA08E3B2844B88900723CA5 /* MainView.swift in Sources */,
 				0EA08E382844B86B00723CA5 /* DetailView.swift in Sources */,
 				0EA08E1E2844B7A500723CA5 /* AppDelegate.swift in Sources */,
-				0EA08E4128451E0800723CA5 /* MainViewProtocol.swift in Sources */,
+				0EA08E4128451E0800723CA5 /* MainViewProtocolDelegate.swift in Sources */,
 				0EA08E362844B84B00723CA5 /* DetailViewController.swift in Sources */,
+				0EA08E462845391600723CA5 /* AddNewKeyViewController.swift in Sources */,
 				0EA08E202844B7A500723CA5 /* SceneDelegate.swift in Sources */,
 				0EA08E3F2844BF7000723CA5 /* MainViewCell.swift in Sources */,
 				0EA08E282844B7A500723CA5 /* keyKeeper.xcdatamodeld in Sources */,
 				0EA08E3D2844B89400723CA5 /* MainViewController.swift in Sources */,
+				0EA08E4C28453EE600723CA5 /* AddNewKeyProtocolDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

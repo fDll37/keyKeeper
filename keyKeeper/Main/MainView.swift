@@ -9,7 +9,7 @@ import UIKit
 
 class MainView: UIView {
     
-    weak var delegate: MainViewProtocol?
+    weak var delegate: MainViewProtocolDelegate?
     
     private lazy var button: UIButton = {
         let button = UIButton()
@@ -17,8 +17,13 @@ class MainView: UIView {
         button.layer.cornerRadius = 30
         button.setImage(UIImage(systemName: "plus.circle.fill"), for: .normal)
         button.layer.backgroundColor = UIColor.green.cgColor
+        button.addTarget(self, action: #selector(openAddNewKey), for: .touchUpInside)
         return button
     }()
+    
+    @objc private func openAddNewKey() {
+        delegate?.openAddNewKeyViewController()
+    }
     
     private lazy var tableOfKeys: UITableView = {
         let table = UITableView()
