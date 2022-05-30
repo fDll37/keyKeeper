@@ -9,6 +9,8 @@ import UIKit
 
 class MainView: UIView {
     
+    weak var delegate: MainViewProtocol?
+    
     private lazy var button: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -23,6 +25,7 @@ class MainView: UIView {
         table.translatesAutoresizingMaskIntoConstraints = false
         table.delegate = self
         table.dataSource = self
+        table.register(MainViewCell.self, forCellReuseIdentifier: MainViewCell.identifier)
         return table
     }()
 
@@ -62,6 +65,9 @@ extension MainView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.openDetailItemViewController(id: indexPath.row)
+    }
 }
 
 
@@ -72,6 +78,8 @@ extension MainView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MainViewCell.identifier) as? MainViewCell else { return UITableViewCell()}
+        cell.selectionStyle = .none
+        return cell
     }
 }

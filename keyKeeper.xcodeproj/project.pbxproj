@@ -18,6 +18,7 @@
 		0EA08E3B2844B88900723CA5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA08E3A2844B88900723CA5 /* MainView.swift */; };
 		0EA08E3D2844B89400723CA5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA08E3C2844B89400723CA5 /* MainViewController.swift */; };
 		0EA08E3F2844BF7000723CA5 /* MainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA08E3E2844BF7000723CA5 /* MainViewCell.swift */; };
+		0EA08E4128451E0800723CA5 /* MainViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA08E4028451E0800723CA5 /* MainViewProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		0EA08E3A2844B88900723CA5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0EA08E3C2844B89400723CA5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0EA08E3E2844BF7000723CA5 /* MainViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewCell.swift; sourceTree = "<group>"; };
+		0EA08E4028451E0800723CA5 /* MainViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				0EA08E3A2844B88900723CA5 /* MainView.swift */,
 				0EA08E3E2844BF7000723CA5 /* MainViewCell.swift */,
 				0EA08E3C2844B89400723CA5 /* MainViewController.swift */,
+				0EA08E4028451E0800723CA5 /* MainViewProtocol.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 				0EA08E3B2844B88900723CA5 /* MainView.swift in Sources */,
 				0EA08E382844B86B00723CA5 /* DetailView.swift in Sources */,
 				0EA08E1E2844B7A500723CA5 /* AppDelegate.swift in Sources */,
+				0EA08E4128451E0800723CA5 /* MainViewProtocol.swift in Sources */,
 				0EA08E362844B84B00723CA5 /* DetailViewController.swift in Sources */,
 				0EA08E202844B7A500723CA5 /* SceneDelegate.swift in Sources */,
 				0EA08E3F2844BF7000723CA5 /* MainViewCell.swift in Sources */,

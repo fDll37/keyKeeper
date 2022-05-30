@@ -9,21 +9,30 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    private lazy var detailView: DetailView = {
+        let detailView = DetailView()
+        detailView.translatesAutoresizingMaskIntoConstraints = false
+        return detailView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        layout()
+        view.backgroundColor = .brown
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func layout() {
+        view.addSubview(detailView)
+        let constraint: CGFloat = 10
+        
+        NSLayoutConstraint.activate([
+            detailView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: constraint),
+            detailView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: constraint),
+            detailView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -constraint),
+            detailView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -constraint)
+        ])
     }
-    */
-
+    
 }
+
+

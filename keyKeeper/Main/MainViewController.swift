@@ -19,6 +19,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blue
+        self.mainView.delegate = self
         layout()
     }
     
@@ -33,4 +34,22 @@ class MainViewController: UIViewController {
             mainView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -constraint)
         ])
     }
+}
+
+
+// MARK: - UIView
+extension UIView {
+    static var identifier: String {
+        return String(describing: self)
+    }
+}
+
+
+// MARK: - Delegate
+extension MainViewController: MainViewProtocol {
+    func openDetailItemViewController(id: Int) {
+        let detailVC = DetailViewController()
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
 }
