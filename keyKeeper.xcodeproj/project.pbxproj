@@ -9,23 +9,31 @@
 /* Begin PBXBuildFile section */
 		0EA08E1E2844B7A500723CA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA08E1D2844B7A500723CA5 /* AppDelegate.swift */; };
 		0EA08E202844B7A500723CA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA08E1F2844B7A500723CA5 /* SceneDelegate.swift */; };
-		0EA08E222844B7A500723CA5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA08E212844B7A500723CA5 /* ViewController.swift */; };
 		0EA08E252844B7A500723CA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EA08E232844B7A500723CA5 /* Main.storyboard */; };
 		0EA08E282844B7A500723CA5 /* keyKeeper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0EA08E262844B7A500723CA5 /* keyKeeper.xcdatamodeld */; };
 		0EA08E2A2844B7A600723CA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0EA08E292844B7A600723CA5 /* Assets.xcassets */; };
 		0EA08E2D2844B7A600723CA5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EA08E2B2844B7A600723CA5 /* LaunchScreen.storyboard */; };
+		0EA08E362844B84B00723CA5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA08E352844B84B00723CA5 /* DetailViewController.swift */; };
+		0EA08E382844B86B00723CA5 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA08E372844B86B00723CA5 /* DetailView.swift */; };
+		0EA08E3B2844B88900723CA5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA08E3A2844B88900723CA5 /* MainView.swift */; };
+		0EA08E3D2844B89400723CA5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA08E3C2844B89400723CA5 /* MainViewController.swift */; };
+		0EA08E3F2844BF7000723CA5 /* MainViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA08E3E2844BF7000723CA5 /* MainViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0EA08E1A2844B7A500723CA5 /* keyKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = keyKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EA08E1D2844B7A500723CA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EA08E1F2844B7A500723CA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0EA08E212844B7A500723CA5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0EA08E242844B7A500723CA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0EA08E272844B7A500723CA5 /* keyKeeper.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = keyKeeper.xcdatamodel; sourceTree = "<group>"; };
 		0EA08E292844B7A600723CA5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EA08E2C2844B7A600723CA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0EA08E2E2844B7A600723CA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0EA08E352844B84B00723CA5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0EA08E372844B86B00723CA5 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		0EA08E3A2844B88900723CA5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		0EA08E3C2844B89400723CA5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0EA08E3E2844BF7000723CA5 /* MainViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +66,10 @@
 		0EA08E1C2844B7A500723CA5 /* keyKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				0EA08E392844B87900723CA5 /* Main */,
+				0EA08E342844B81F00723CA5 /* Detail */,
 				0EA08E1D2844B7A500723CA5 /* AppDelegate.swift */,
 				0EA08E1F2844B7A500723CA5 /* SceneDelegate.swift */,
-				0EA08E212844B7A500723CA5 /* ViewController.swift */,
 				0EA08E232844B7A500723CA5 /* Main.storyboard */,
 				0EA08E292844B7A600723CA5 /* Assets.xcassets */,
 				0EA08E2B2844B7A600723CA5 /* LaunchScreen.storyboard */,
@@ -68,6 +77,25 @@
 				0EA08E262844B7A500723CA5 /* keyKeeper.xcdatamodeld */,
 			);
 			path = keyKeeper;
+			sourceTree = "<group>";
+		};
+		0EA08E342844B81F00723CA5 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				0EA08E352844B84B00723CA5 /* DetailViewController.swift */,
+				0EA08E372844B86B00723CA5 /* DetailView.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		0EA08E392844B87900723CA5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0EA08E3A2844B88900723CA5 /* MainView.swift */,
+				0EA08E3E2844BF7000723CA5 /* MainViewCell.swift */,
+				0EA08E3C2844B89400723CA5 /* MainViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +169,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0EA08E222844B7A500723CA5 /* ViewController.swift in Sources */,
+				0EA08E3B2844B88900723CA5 /* MainView.swift in Sources */,
+				0EA08E382844B86B00723CA5 /* DetailView.swift in Sources */,
 				0EA08E1E2844B7A500723CA5 /* AppDelegate.swift in Sources */,
+				0EA08E362844B84B00723CA5 /* DetailViewController.swift in Sources */,
 				0EA08E202844B7A500723CA5 /* SceneDelegate.swift in Sources */,
+				0EA08E3F2844BF7000723CA5 /* MainViewCell.swift in Sources */,
 				0EA08E282844B7A500723CA5 /* keyKeeper.xcdatamodeld in Sources */,
+				0EA08E3D2844B89400723CA5 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
