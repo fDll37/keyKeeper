@@ -9,11 +9,32 @@ import UIKit
 
 class DetailView: UIView {
 
-    private lazy var itemDetailView: UIView = {
-        let contentView = UIView()
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        return contentView
+    weak var delegate: DetailViewProtocolDelegate?
+    
+    private lazy var changeDetailKeyLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        label.text = "Редактировать"
+        label.textColor = .black
+        return label
     }()
+    
+    private lazy var statusDateKeySwitch: UISwitch = {
+        let switchStatus = UISwitch()
+        switchStatus.translatesAutoresizingMaskIntoConstraints = false
+        switchStatus.addTarget(self, action: #selector(switchStatusKey(_:)), for: .valueChanged)
+        return switchStatus
+    }()
+    
+    @objc private func switchStatusKey(_ sender: UISwitch) {
+        if(sender.isOn) {
+            print("On")
+        }
+        else{
+            print("Off")
+        }
+    }
     
     private lazy var itemNameImage: UIImageView = {
         let image = UIImageView(image: UIImage(systemName: "person.text.rectangle.fill"))
@@ -24,7 +45,7 @@ class DetailView: UIView {
     private lazy var itemNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         label.text = "Имя учетной записи"
         label.textColor = .black
         return label
@@ -49,7 +70,7 @@ class DetailView: UIView {
     private lazy var itemLoginLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         label.text = "Логин учетной записи"
         label.textColor = .black
         return label
@@ -74,7 +95,7 @@ class DetailView: UIView {
     private lazy var itemPasswordLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 20)
+        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         label.text = "Пароль учетной записи"
         label.textColor = .black
         return label
@@ -96,9 +117,13 @@ class DetailView: UIView {
         button.layer.cornerRadius = 20
         button.setTitle("Сохранить", for: .normal)
         button.layer.backgroundColor = UIColor.blue.cgColor
+        button.addTarget(self, action: #selector(closeDetailView), for: .touchUpInside)
         return button
     }()
     
+    @objc private func closeDetailView(){
+        delegate?.closeDetailViewController()
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -112,23 +137,29 @@ class DetailView: UIView {
     
     
     private func layout(){
-        addSubview(itemDetailView)
-        [itemNameImage, itemNameLabel, itemNameTextField, itemLoginImage, itemLoginLabel, itemLoginTextField, itemPasswordImage, itemPasswordLabel, itemPasswordTextField, saveButton].forEach{itemDetailView.addSubview($0)}
+        [changeDetailKeyLabel, statusDateKeySwitch, itemNameImage, itemNameLabel, itemNameTextField, itemLoginImage, itemLoginLabel, itemLoginTextField, itemPasswordImage, itemPasswordLabel, itemPasswordTextField, saveButton].forEach{addSubview($0)}
         let inset: CGFloat = 10
+        let insideInset: CGFloat = 5
         
         NSLayoutConstraint.activate([
             
-            itemNameImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+            changeDetailKeyLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+            changeDetailKeyLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: inset),
+            
+            statusDateKeySwitch.topAnchor.constraint(equalTo: changeDetailKeyLabel.topAnchor),
+            statusDateKeySwitch.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -inset),
+            
+            itemNameImage.topAnchor.constraint(equalTo: changeDetailKeyLabel.bottomAnchor, constant: 20),
             itemNameImage.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: inset),
             itemNameImage.widthAnchor.constraint(equalToConstant: 50),
             itemNameImage.heightAnchor.constraint(equalToConstant: 50),
             
-            itemNameLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+            itemNameLabel.topAnchor.constraint(equalTo: changeDetailKeyLabel.bottomAnchor, constant: 20),
             itemNameLabel.leadingAnchor.constraint(equalTo: itemNameImage.trailingAnchor, constant: inset),
             itemNameLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -inset),
             itemNameLabel.heightAnchor.constraint(equalToConstant: 20),
             
-            itemNameTextField.topAnchor.constraint(equalTo: itemNameLabel.bottomAnchor, constant: inset),
+            itemNameTextField.topAnchor.constraint(equalTo: itemNameLabel.bottomAnchor, constant: insideInset),
             itemNameTextField.leadingAnchor.constraint(equalTo: itemNameImage.trailingAnchor, constant: inset),
             itemNameTextField.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -inset),
             itemNameTextField.heightAnchor.constraint(equalToConstant: 20),
@@ -144,7 +175,7 @@ class DetailView: UIView {
             itemLoginLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -inset),
             itemLoginLabel.heightAnchor.constraint(equalToConstant: 20),
             
-            itemLoginTextField.topAnchor.constraint(equalTo: itemLoginLabel.bottomAnchor, constant: inset),
+            itemLoginTextField.topAnchor.constraint(equalTo: itemLoginLabel.bottomAnchor, constant: insideInset),
             itemLoginTextField.leadingAnchor.constraint(equalTo: itemLoginImage.trailingAnchor, constant: inset),
             itemLoginTextField.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -inset),
             itemLoginTextField.heightAnchor.constraint(equalToConstant: 20),
@@ -160,7 +191,7 @@ class DetailView: UIView {
             itemPasswordLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -inset),
             itemPasswordLabel.heightAnchor.constraint(equalToConstant: 20),
             
-            itemPasswordTextField.topAnchor.constraint(equalTo: itemPasswordLabel.bottomAnchor, constant: inset),
+            itemPasswordTextField.topAnchor.constraint(equalTo: itemPasswordLabel.bottomAnchor, constant: insideInset),
             itemPasswordTextField.leadingAnchor.constraint(equalTo: itemPasswordImage.trailingAnchor, constant: inset),
             itemPasswordTextField.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -inset),
             itemPasswordTextField.heightAnchor.constraint(equalToConstant: 20),

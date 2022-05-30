@@ -17,6 +17,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.detailView.delegate = self
         layout()
         hideKeyboardWhenTappedAround()
         view.backgroundColor = .white
@@ -53,4 +54,14 @@ extension DetailViewController: UITextFieldDelegate {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+}
+
+
+// MARK: - DetailViewProtocolDelegate
+extension DetailViewController: DetailViewProtocolDelegate {
+    func closeDetailViewController() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    
 }

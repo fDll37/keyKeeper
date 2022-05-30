@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E3556B82845539800DCED8F /* DetailViewProtocolDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3556B72845539800DCED8F /* DetailViewProtocolDelegate.swift */; };
 		0EA08E1E2844B7A500723CA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA08E1D2844B7A500723CA5 /* AppDelegate.swift */; };
 		0EA08E202844B7A500723CA5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA08E1F2844B7A500723CA5 /* SceneDelegate.swift */; };
 		0EA08E252844B7A500723CA5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EA08E232844B7A500723CA5 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0E3556B72845539800DCED8F /* DetailViewProtocolDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewProtocolDelegate.swift; sourceTree = "<group>"; };
 		0EA08E1A2844B7A500723CA5 /* keyKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = keyKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EA08E1D2844B7A500723CA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0EA08E1F2844B7A500723CA5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				0EA08E352844B84B00723CA5 /* DetailViewController.swift */,
+				0E3556B72845539800DCED8F /* DetailViewProtocolDelegate.swift */,
 				0EA08E372844B86B00723CA5 /* DetailView.swift */,
 			);
 			path = Detail;
@@ -194,6 +197,7 @@
 				0EA08E382844B86B00723CA5 /* DetailView.swift in Sources */,
 				0EA08E1E2844B7A500723CA5 /* AppDelegate.swift in Sources */,
 				0EA08E4128451E0800723CA5 /* MainViewProtocolDelegate.swift in Sources */,
+				0E3556B82845539800DCED8F /* DetailViewProtocolDelegate.swift in Sources */,
 				0EA08E362844B84B00723CA5 /* DetailViewController.swift in Sources */,
 				0EA08E462845391600723CA5 /* AddNewKeyViewController.swift in Sources */,
 				0EA08E202844B7A500723CA5 /* SceneDelegate.swift in Sources */,

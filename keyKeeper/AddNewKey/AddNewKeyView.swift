@@ -114,6 +114,7 @@ class AddNewKeyView: UIView {
     private func layout(){
         [itemNameImage, itemNameLabel, itemNameTextField, itemLoginImage, itemLoginLabel, itemLoginTextField, itemPasswordImage, itemPasswordLabel, itemPasswordTextField, createButton].forEach{addSubview($0)}
         let inset: CGFloat = 10
+        let insideInset: CGFloat = 5
         
         NSLayoutConstraint.activate([
             itemNameImage.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: inset),
@@ -126,7 +127,7 @@ class AddNewKeyView: UIView {
             itemNameLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -inset),
             itemNameLabel.heightAnchor.constraint(equalToConstant: 20),
             
-            itemNameTextField.topAnchor.constraint(equalTo: itemNameLabel.bottomAnchor, constant: inset),
+            itemNameTextField.topAnchor.constraint(equalTo: itemNameLabel.bottomAnchor, constant: insideInset),
             itemNameTextField.leadingAnchor.constraint(equalTo: itemNameImage.trailingAnchor, constant: inset),
             itemNameTextField.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -inset),
             itemNameTextField.heightAnchor.constraint(equalToConstant: 20),
@@ -142,7 +143,7 @@ class AddNewKeyView: UIView {
             itemLoginLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -inset),
             itemLoginLabel.heightAnchor.constraint(equalToConstant: 20),
             
-            itemLoginTextField.topAnchor.constraint(equalTo: itemLoginLabel.bottomAnchor, constant: inset),
+            itemLoginTextField.topAnchor.constraint(equalTo: itemLoginLabel.bottomAnchor, constant: insideInset),
             itemLoginTextField.leadingAnchor.constraint(equalTo: itemLoginImage.trailingAnchor, constant: inset),
             itemLoginTextField.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -inset),
             itemLoginTextField.heightAnchor.constraint(equalToConstant: 20),
@@ -158,7 +159,7 @@ class AddNewKeyView: UIView {
             itemPasswordLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -inset),
             itemPasswordLabel.heightAnchor.constraint(equalToConstant: 20),
             
-            itemPasswordTextField.topAnchor.constraint(equalTo: itemPasswordLabel.bottomAnchor, constant: inset),
+            itemPasswordTextField.topAnchor.constraint(equalTo: itemPasswordLabel.bottomAnchor, constant: insideInset),
             itemPasswordTextField.leadingAnchor.constraint(equalTo: itemPasswordImage.trailingAnchor, constant: inset),
             itemPasswordTextField.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -inset),
             itemPasswordTextField.heightAnchor.constraint(equalToConstant: 20),
