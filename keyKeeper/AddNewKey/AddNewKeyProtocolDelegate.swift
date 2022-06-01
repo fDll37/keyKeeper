@@ -9,4 +9,5 @@ import UIKit
 
 protocol AddNewKeyProtocolDelegate: AnyObject {
     func closeAddNewKeyViewController()
+    func getDataForTableKeys(data: [String: Any])
 }

@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import CoreData
 
 class MainView: UIView {
+    
+    var keys: [NSManagedObject] = []
     
     weak var delegate: MainViewProtocolDelegate?
     
@@ -79,12 +82,13 @@ extension MainView: UITableViewDelegate {
 // MARK: - UITableViewDataSource
 extension MainView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        100
+        return keys.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MainViewCell.identifier) as? MainViewCell else { return UITableViewCell()}
         cell.selectionStyle = .none
+        cell.setCell(key: keys[indexPath.row])
         return cell
     }
 }

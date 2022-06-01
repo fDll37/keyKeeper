@@ -97,6 +97,8 @@ class AddNewKeyView: UIView {
     }()
     
     @objc private func closeAddNewKey() {
+        
+        delegate?.getDataForTableKeys(data: getDataFromForm())
         delegate?.closeAddNewKeyViewController()
     }
     
@@ -109,7 +111,14 @@ class AddNewKeyView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
+    private func getDataFromForm() -> [String: Any] {
+        var needData:[String: Any] = [:]
+        needData["id"] = (0...1000).randomElement()
+        needData["name"] = itemNameTextField.text
+        needData["login"] = itemLoginTextField.text
+        needData["password"] = itemPasswordTextField.text
+        return needData
+    }
     
     private func layout(){
         [itemNameImage, itemNameLabel, itemNameTextField, itemLoginImage, itemLoginLabel, itemLoginTextField, itemPasswordImage, itemPasswordLabel, itemPasswordTextField, createButton].forEach{addSubview($0)}

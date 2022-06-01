@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 
 class MainViewCell: UITableViewCell {
 
@@ -35,6 +36,10 @@ class MainViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setCell(key: NSManagedObject) {
+        itemLabel.text = key.value(forKey: "name") as? String
     }
     
     private func layout(){

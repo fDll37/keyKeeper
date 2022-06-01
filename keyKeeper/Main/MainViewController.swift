@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import CoreData
 
 class MainViewController: UIViewController {
 
+    var keys = [NSManagedObject]()
+    
     private lazy var mainView: MainView = {
         let mainView = MainView()
         mainView.translatesAutoresizingMaskIntoConstraints = false
@@ -21,6 +24,30 @@ class MainViewController: UIViewController {
         view.backgroundColor = .gray
         self.mainView.delegate = self
         layout()
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // Шаг 1. Получение общего агента и диспетчера управляемых объектов
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let managedObectContext = appDelegate.persistentContainer.viewContext
+        
+        // Шаг 2. Создайте запрос на получение
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
+        
+        // Шаг 3: Выполните запрос
+        do {
+            let fetchedResults = try managedObectContext.fetch(fetchRequest) as? [NSManagedObject]
+            if let results = fetchedResults {
+                keys = results
+            }
+            
+        } catch  {
+            fatalError("Получить не удалось")
+            
+        }
     }
     
     private func layout() {
