@@ -7,80 +7,144 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "43B17C27-5D66-4B45-AD9D-68B9B4B6F5CD"
+            uuid = "17BA1516-AFED-48A0-B86D-A8FE74F5B2EE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "keyKeeper/AddNewKey/AddNewKeyViewController.swift"
+            filePath = "keyKeeper/Main/MainView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "getDataForTableKeys(data:)"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "reloadDataTableOfKeys()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A3155148-83F6-472B-BAAE-862D42D94FA2"
+            uuid = "D91A0ED2-388D-460D-8D71-72F1A655174A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "keyKeeper/AddNewKey/AddNewKeyViewController.swift"
+            filePath = "keyKeeper/Main/MainView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "getDataForTableKeys(data:)"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "reloadDataTableOfKeys()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5221F75E-2B58-4CF3-BBC8-2B3595F98451"
+            uuid = "59E1FBF1-F22B-4B4C-AA33-692304FC1372"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "keyKeeper/AddNewKey/AddNewKeyViewController.swift"
+            filePath = "keyKeeper/Main/MainView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "getDataForTableKeys(data:)"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "reloadDataTableOfKeys()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E178EED7-B3C6-4DF4-B7E3-23CCE37CD091"
+            uuid = "ABABE2EE-40F7-4D4A-909F-C85D5A82F3F0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "keyKeeper/AddNewKey/AddNewKeyViewController.swift"
+            filePath = "keyKeeper/AddNewKey/AddNewKeyView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "getDataForTableKeys(data:)"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "closeAddNewKey()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "84C78260-A8A9-4EB5-AA8D-7EE43CAA65DB"
+            uuid = "8C54F1B5-745B-4C26-9FF4-CF362AB5D05C"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "keyKeeper/AddNewKey/AddNewKeyViewController.swift"
+            filePath = "keyKeeper/AddNewKey/AddNewKeyView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "getDataForTableKeys(data:)"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "closeAddNewKey()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "021C6F0C-24F3-44D5-A7E3-DF0D528D58FD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "keyKeeper/AddNewKey/AddNewKeyView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "closeAddNewKey()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CE522316-1BD1-446A-84CB-81B5C889886E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "keyKeeper/Main/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DEFCE2DF-7400-4B2D-BA0B-D0A17B66D4B0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "keyKeeper/Main/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "76A68C66-EC99-4CBE-B43C-27F4D0E18C6D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "keyKeeper/Main/MainViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

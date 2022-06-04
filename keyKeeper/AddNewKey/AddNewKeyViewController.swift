@@ -10,7 +10,7 @@ import CoreData
 
 class AddNewKeyViewController: UIViewController {
     
-    var keys = [NSManagedObject]()
+    var keys:[Any] = []
     
     private lazy var addNewKeyView: AddNewKeyView = {
         let addNewKeyView = AddNewKeyView()
@@ -60,6 +60,7 @@ extension AddNewKeyViewController: UITextFieldDelegate {
 // MARK: - AddNewKeyProtocolDelegate
 
 extension AddNewKeyViewController: AddNewKeyProtocolDelegate {
+    
     func getDataForTableKeys(data: [String: Any]) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.persistentContainer.viewContext

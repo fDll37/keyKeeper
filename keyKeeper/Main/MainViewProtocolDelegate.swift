@@ -11,3 +11,8 @@ protocol MainViewProtocolDelegate: AnyObject {
     func openDetailItemViewController(id: Int)
     func openAddNewKeyViewController()
 }
+
+
+protocol MainViewReloadDataDelegate: AnyObject {
+    func reloadDataTableOfKeys()
+}
