@@ -12,10 +12,7 @@ class MainView: UIView {
     
     var keys:[Any] = []
     
-    private lazy var AddNewKey = AddNewKeyView()
-    private lazy var mainVC = MainViewController()
-    
-    weak var delegate: MainViewProtocolDelegate?
+    weak var delegateToVC: MainViewProtocolDelegate?
     
     private lazy var button: UIButton = {
         let button = UIButton()
@@ -28,7 +25,7 @@ class MainView: UIView {
     }()
     
     @objc private func openAddNewKey() {
-        delegate?.openAddNewKeyViewController()
+        delegateToVC?.openAddNewKeyViewController()
     }
     
     private lazy var tableOfKeys: UITableView = {
@@ -43,16 +40,14 @@ class MainView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         layout()
-        fetchRequest()
-        self.AddNewKey.mainDelegate = self
-        self.mainVC.delegateFromMainController = self
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private func fetchRequest(){
+    func fetchRequest(){
+        keys = []
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Keys")
@@ -63,6 +58,10 @@ class MainView: UIView {
         }
     }
     
+    func reloadDataTableOfKeys() {
+        self.tableOfKeys.reloadData()
+    }
+
     
     private func layout() {
         addSubview(button)
@@ -92,7 +91,7 @@ extension MainView: UITableViewDelegate {
         UITableView.automaticDimension
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.openDetailItemViewController(id: indexPath.row)
+        delegateToVC?.openDetailItemViewController(id: indexPath.row)
     }
 }
 
@@ -106,16 +105,7 @@ extension MainView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MainViewCell.identifier) as? MainViewCell else { return UITableViewCell()}
         cell.selectionStyle = .none
-        fetchRequest()
         cell.setCell(key: keys[indexPath.row] as! NSManagedObject)
         return cell
-    }
-}
-
-// MARK: - MainViewReloadDataDelegate
-
-extension MainView: MainViewReloadDataDelegate{
-    func reloadDataTableOfKeys() {
-        self.tableOfKeys.reloadData()
     }
 }

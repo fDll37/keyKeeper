@@ -11,6 +11,8 @@ class DetailView: UIView {
 
     weak var delegate: DetailViewProtocolDelegate?
     
+//    weak var delegateToView : DetailViewDelegate?
+    
     private lazy var changeDetailKeyLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -121,12 +123,16 @@ class DetailView: UIView {
         return button
     }()
     
+    
+    private lazy var detailVC = DetailViewController()
     @objc private func closeDetailView(){
         delegate?.closeDetailViewController()
     }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+//        self.detailVC.delegateToView = self
+//        self.delegateToView = self
         layout()
     }
     
@@ -206,5 +212,13 @@ class DetailView: UIView {
     
 }
 
+// MARK: - DetailViewDelegate
 
+//extension DetailView: DetailViewDelegate {
+//    func delegateToDetailView(key: [String]) {
+//        self.itemNameTextField.text = key[0]
+//        self.itemLoginTextField.text = key[1]
+//        self.itemPasswordTextField.text = key[2]
+//    }
+//}
 

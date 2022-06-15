@@ -10,3 +10,7 @@ import UIKit
 protocol DetailViewProtocolDelegate: AnyObject {
     func closeDetailViewController()
 }
+
+//protocol DetailViewDelegate: AnyObject {
+//    func delegateToDetailView(key: [String])
+//}

@@ -6,11 +6,8 @@
 //
 
 import UIKit
-import CoreData
 
 class MainViewController: UIViewController {
-    
-    weak var delegateFromMainController: MainViewReloadDataDelegate?
     
     private lazy var mainView: MainView = {
         let mainView = MainView()
@@ -22,13 +19,14 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .gray
-        self.mainView.delegate = self
+        self.mainView.delegateToVC = self
         layout()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        delegateFromMainController?.reloadDataTableOfKeys()
+        mainView.fetchRequest()
+        mainView.reloadDataTableOfKeys()
     }
     
     private func layout() {
@@ -62,7 +60,7 @@ extension MainViewController: MainViewProtocolDelegate {
     }
     
     func openDetailItemViewController(id: Int) {
-        let detailVC = DetailViewController()
+        let detailVC = DetailViewController(id: id)
         navigationController?.pushViewController(detailVC, animated: true)
     }
     

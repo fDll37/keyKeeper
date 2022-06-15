@@ -6,21 +6,54 @@
 //
 
 import UIKit
+import CoreData
 
 class DetailViewController: UIViewController {
 
+    var id: Int?
+    
+    var keys:[Any] = []
+    
+//    weak var delegateToView: DetailViewDelegate?
+    
     private lazy var detailView: DetailView = {
         let detailView = DetailView()
         detailView.translatesAutoresizingMaskIntoConstraints = false
         return detailView
     }()
     
+    convenience init() {
+         self.init(id: nil)
+     }
+     init(id: Int?) {
+         self.id = id
+         super.init(nibName: nil, bundle: nil)
+     }
+     required init?(coder aDecoder: NSCoder) {
+         super.init(coder: aDecoder)
+     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.detailView.delegate = self
         layout()
+        fetchRequest()
+//        delegateToView?.delegateToDetailView(key: keys[id!] as! [String])
         hideKeyboardWhenTappedAround()
         view.backgroundColor = .white
+
+    }
+    
+    private func fetchRequest(){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Keys")
+        fetchRequest.returnsObjectsAsFaults = false
+        let keysBD = try! managedContext.fetch(fetchRequest)
+        for key in keysBD {
+            keys.append(key)
+        }
     }
     
     private func layout() {
