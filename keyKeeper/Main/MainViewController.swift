@@ -15,10 +15,12 @@ class MainViewController: UIViewController {
         return mainView
     }()
     
+//    var addView = AddNewKeyView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .gray
+//        self.addView.delegateToMainView = self
         self.mainView.delegateToVC = self
         layout()
     }
@@ -64,4 +66,11 @@ extension MainViewController: MainViewProtocolDelegate {
         navigationController?.pushViewController(detailVC, animated: true)
     }
     
+}
+
+extension MainViewController: MainViewFromAddProtocolDelegate {
+    func refreshTable() {
+        self.mainView.fetchRequest()
+        self.mainView.reloadDataTableOfKeys()
+    }
 }

@@ -12,3 +12,7 @@ protocol MainViewProtocolDelegate: AnyObject {
     func openAddNewKeyViewController()
     
 }
+
+protocol MainViewFromAddProtocolDelegate: AnyObject {
+    func refreshTable()
+}

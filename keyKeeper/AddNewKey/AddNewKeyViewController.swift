@@ -22,7 +22,6 @@ class AddNewKeyViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         self.addNewKeyView.delegate = self
-//        hideKeyboardWhenTappedAround()
         layout()
     }
     
@@ -38,23 +37,6 @@ class AddNewKeyViewController: UIViewController {
         ])
     }
 
-}
-// MARK: - UITextFieldDelegate
-extension AddNewKeyViewController: UITextFieldDelegate {
-//    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-//        view.endEditing(true)
-//        return true
-//    }
-//
-//    func hideKeyboardWhenTappedAround() {
-//        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
-//        tap.cancelsTouchesInView = false
-//        view.addGestureRecognizer(tap)
-//    }
-//
-//    @objc func dismissKeyboard() {
-//        view.endEditing(true)
-//    }
 }
 
 // MARK: - AddNewKeyProtocolDelegate
