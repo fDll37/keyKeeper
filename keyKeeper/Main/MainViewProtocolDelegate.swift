@@ -10,9 +10,8 @@ import UIKit
 protocol MainViewProtocolDelegate: AnyObject {
     func openDetailItemViewController(id: Int)
     func openAddNewKeyViewController()
-    
 }
 
-protocol MainViewFromAddProtocolDelegate: AnyObject {
+protocol MainViewFromAddViewProtocolDelegate: AnyObject {
     func refreshTable()
 }

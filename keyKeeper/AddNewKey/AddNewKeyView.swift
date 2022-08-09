@@ -9,8 +9,8 @@ import UIKit
 
 class AddNewKeyView: UIView {
     
-    weak var delegate: AddNewKeyProtocolDelegate?
-    weak var delegateToMainView: MainViewFromAddProtocolDelegate?
+    weak var delegateAddNewKeyView: AddNewKeyProtocolDelegate?
+    weak var delegateToMainView: MainViewFromAddViewProtocolDelegate?
     
     private lazy var itemNameImage: UIImageView = {
         let image = UIImageView(image: UIImage(systemName: "person.text.rectangle.fill"))
@@ -98,8 +98,8 @@ class AddNewKeyView: UIView {
     }()
     
     @objc private func closeAddNewKey() {
-        self.delegate?.getDataForTableKeys(data: getDataFromForm())
-        self.delegate?.closeAddNewKeyViewController()
+        self.delegateAddNewKeyView?.getDataForTableKeys(data: getDataFromForm())
+        self.delegateAddNewKeyView?.closeAddNewKeyViewController()
         self.delegateToMainView?.refreshTable()
     }
     
