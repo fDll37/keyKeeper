@@ -111,24 +111,22 @@ class AddNewKeyViewController: UIViewController {
         self.dismiss(animated: true)
     }
     
-    private func getDataFromForm() -> [String: Any] {
-        var needData:[String: Any] = [:]
-        needData["id"] = (0...1000).randomElement()
-        needData["name"] = itemNameTextField.text
-        needData["login"] = itemLoginTextField.text
-        needData["password"] = itemPasswordTextField.text
-        return needData
+    private func getDataFromForm() -> KeyData {
+        let keyData = KeyData(name: itemNameTextField.text ?? "not name",
+                              login: itemLoginTextField.text ?? "not login",
+                              password: itemPasswordTextField.text ?? "not password")
+        return keyData
     }
     
-    func getDataForTableKeys(data: [String: Any]) {
+    func getDataForTableKeys(data: KeyData) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Keys", in: managedContext)!
         let key = NSManagedObject(entity: entity, insertInto: managedContext)
-        key.setValue(data["id"], forKeyPath: "id")
-        key.setValue(data["name"], forKeyPath: "name")
-        key.setValue(data["login"], forKeyPath: "login")
-        key.setValue(data["password"], forKeyPath: "password")
+        key.setValue(data.id, forKeyPath: "id")
+        key.setValue(data.name, forKeyPath: "name")
+        key.setValue(data.login, forKeyPath: "login")
+        key.setValue(data.password, forKeyPath: "password")
         do {
           try managedContext.save()
           keys.append(key)
@@ -197,4 +195,12 @@ class AddNewKeyViewController: UIViewController {
             createButton.widthAnchor.constraint(equalToConstant: 130)
         ])
     }
+}
+
+
+struct KeyData {
+    var id: Int = (0...1000).randomElement() ?? 0
+    var name: String
+    var login: String
+    var password: String
 }

@@ -14,7 +14,6 @@ class DetailViewController: UIViewController {
     
     var keys:[Any] = []
     
-//    weak var delegateToView: DetailViewDelegate?
     
     private lazy var detailView: DetailView = {
         let detailView = DetailView()
@@ -39,7 +38,6 @@ class DetailViewController: UIViewController {
         self.detailView.delegate = self
         layout()
         fetchRequest()
-//        delegateToView?.delegateToDetailView(key: keys[id!] as! [String])
         hideKeyboardWhenTappedAround()
         view.backgroundColor = .white
 
